@@ -1,0 +1,280 @@
+/* --- Thiết lập cơ bản --- */
+.container {
+    max-width: 1200px; /* Giới hạn chiều rộng nội dung */
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* --- 1. Định dạng chung cho Header --- */
+.main-header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+/* --- 2. Hàng trên (Logo và Hotline) --- */
+.header-top {
+    display: flex;
+    justify-content: space-between; /* Đẩy hai bên ra xa nhau */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    padding: 15px 15px; /* Padding trên/dưới 10px */
+}
+
+.site-logo {
+    max-width: 300px; /* Kích thước logo */
+    height: auto;
+    display: block;
+}
+
+.header-utilities {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.hotline {
+    margin-right: 20px;
+    color: #333;
+    font-weight: 500;
+}
+
+.cart-link {
+    text-decoration: none;
+    color: #C0392B; /* Màu đỏ nổi bật cho Giỏ hàng */
+    font-weight: 600;
+}
+
+/* --- 3. Hàng dưới (Thanh điều hướng chính) --- */
+.main-nav {
+    display: flex;
+    justify-content: center; /* Căn toàn bộ menu ra giữa */
+    border-top: 1px solid #eee; /* Đường phân cách */
+    padding: 10px 0;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex; /* Sắp xếp các mục menu theo hàng ngang */
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: block;
+    transition: color 0.3s;
+}
+
+.main-nav ul li a:hover {
+    color: #C0392B; /* Hiệu ứng hover cho menu */
+}
+/* --- CSS Cho Video Nhúng YouTube Full-Width Responsive --- */
+
+.video-hero {
+    /* Đảm bảo nó chiếm 100% chiều rộng của trình duyệt */
+    width: 100%; 
+    margin-bottom: 40px; /* Tạo khoảng cách với phần nội dung bên dưới */
+}
+
+.video-container {
+    /* 1. Thiết lập vị trí tương đối cho khối cha */
+    position: relative; 
+    
+    /* 2. Kỹ thuật tạo chiều cao ảo để giữ tỷ lệ 16:9 */
+    /* Chiều cao = 9/16 * 100% = 56.25% */
+    padding-bottom: 56.25%; 
+    height: 0; /* Đặt chiều cao thực bằng 0 */
+    overflow: hidden; 
+}
+
+.video-container iframe {
+    /* 3. Đặt iframe tuyệt đối để nó phủ lên chiều cao ảo */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Chiếm 100% chiều rộng của .video-container */
+    height: 100%; /* Chiếm 100% chiều cao của .video-container */
+}
+/* --- 1. Định dạng khối chính --- */
+.featured-products {
+    padding: 60px 0;
+    text-align: center; /* Căn giữa tiêu đề H2 */
+}
+
+.featured-products h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+/* --- 2. Thiết lập CSS Grid cho Lưới sản phẩm --- */
+.product-grid {
+    display: grid;
+    /* 4 cột đều nhau trên desktop */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+}
+
+/* --- 3. Định dạng Thẻ Sản phẩm (Product Card) --- */
+.product-card {
+    text-align: center;
+    padding: 10px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 250px; /* Cố định chiều cao ảnh */
+    object-fit: cover; /* Cắt ảnh để vừa với khung mà không bị méo */
+    margin-bottom: 10px;
+}
+
+.product-info h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    margin: 5px 0;
+    min-height: 38px; /* Đảm bảo chiều cao tối thiểu cho tên sản phẩm 2 dòng */
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000; 
+    margin: 5px 0 15px 0;
+}
+
+/* --- 4. Định dạng Nút (Buttons) --- */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+    width: 90%; 
+}
+
+/* Màu cam/đỏ nhạt cho nút "Thêm vào Giỏ" */
+.btn-add-cart {
+    background-color: #F7941D; /* Màu cam nổi bật */
+    color: white;
+}
+
+.btn-add-cart:hover {
+    background-color: #e58718;
+}
+
+/* Màu đỏ đậm hơn cho nút "View details" (như sản phẩm đầu tiên) */
+.btn-details {
+    background-color: #D9534F; /* Màu đỏ đô */
+    color: white;
+}
+/* --- Khối Cẩm Nang & Sản phẩm mới --- */
+.bottom-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Chia thành 2 cột bằng nhau */
+    gap: 40px;
+    padding: 40px 0;
+    margin-top: 20px;
+}
+
+.bottom-content-grid h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-transform: none; /* Không viết hoa cho tiêu đề phụ */
+    color: #333;
+}
+
+/* Định dạng danh sách bài viết */
+.article-list {
+    list-style: none;
+}
+
+.article-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.article-list li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Định dạng sản phẩm mới */
+.new-product-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+}
+
+.new-product-item img {
+    width: 60px; /* Ảnh nhỏ */
+    height: 60px;
+    object-fit: contain;
+}
+
+.new-product-item .product-name {
+    font-weight: 500;
+    margin: 0;
+}
+
+.new-product-item .product-price {
+    color: #C0392B;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.small-btn {
+    padding: 5px 10px;
+    font-size: 13px;
+    width: auto;
+}
+/* --- Footer --- */
+.main-footer {
+    background-color: #f7f7f7; /* Nền xám nhạt */
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Chia thành 2 cột */
+    gap: 40px;
+    padding-bottom: 30px;
+}
+
+.footer-col h3 {
+    font-size: 16px;
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-col p {
+    font-size: 14px;
+    color: #666;
+    margin: 3px 0;
+}
+
+.footer-col a {
+    color: #C0392B;
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    padding: 15px 0;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #ddd;
+}
